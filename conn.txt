@@ -1,0 +1,3 @@
+Docker:
+docker run --name postgres-financeiro -e POSTGRES_PASSWORD=123456 -e POSTGRES_USER=financeiro -d -p 5450:5432 postgres
+
