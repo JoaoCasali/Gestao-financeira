@@ -7,3 +7,7 @@ Cor principal: #00afa9 (azul) Letra: white
     padding: 0;
     margin: 0;
 }
+
+.space {
+    flex: 1 1 100px;
+}

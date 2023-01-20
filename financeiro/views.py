@@ -7,7 +7,7 @@ def listarMovimentacoes(request):
 
 
 def login(request):
-    return render(request, 'login.html')
+    return render(request, 'usuario/login.html')
 
 
 def cadastrarUsuario(request):
