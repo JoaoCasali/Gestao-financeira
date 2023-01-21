@@ -1,0 +1,33 @@
+header.header {
+    background-color: #00afa9;
+    display: flex;
+    align-items: center;
+    color: white;
+    padding: 3px 8px;
+}
+
+.header .titulo {
+    border-right: 1px solid white;
+    padding: 0px 15px 0px 0px;
+}
+
+.nav .nav-link {
+    font-size: 1.2rem;
+    color: white;
+}
+
+.header .usuario {
+    width: 20%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.header .usuario h4 {
+    margin-right: 5px;
+}
+
+.header .usuario button {
+    width: 30%;
+    height: 40px;
+}
