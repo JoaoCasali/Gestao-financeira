@@ -1,0 +1,34 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block content %}
+<body>
+<br>
+    <div class="container">              
+        <table class="table table-hover">
+            <thead>
+            <tr>
+              <th>ID</th>
+              <th>DATA</th>
+              <th>VALOR</th>
+              <th>DESCRICAO</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for movimentacao in movimentacoes %}
+            <tr>
+              <td>ID</td>
+              <td>{{ movimentacao.data_movimentacao }}</td>
+              <td>{{ movimentacao.valor }}</td>
+              <td>{{ movimentacao.descricao }}</td>
+            </tr>
+          </tbody>
+          {% endfor %}
+        </table>        
+      </div>      
+      </body>
+    {% endblock %}
+      </html>
+</body>
+
+</html>
