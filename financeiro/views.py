@@ -12,3 +12,10 @@ def login(request):
 
 def cadastrarUsuario(request):
     return render(request, 'usuario/cadastrar.html')
+    
+def movimentacao(request):
+    movimentacoes = Movimentacao.objects.all()
+    conteudo = {
+        'movimentacoes': movimentacoes
+    }
+    return render(request,'movimentacoes/listar.html', conteudo)
