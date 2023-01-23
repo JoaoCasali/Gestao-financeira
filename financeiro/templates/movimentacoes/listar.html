@@ -1,29 +1,42 @@
 {% extends 'index.html' %}
 {% load static %}
+{% load humanize %}
 
 {% block content %}
 <body>
+  <h1 class="titulo">Quadro de Movimentações</h1>
 <br>
     <div class="container">              
-        <table class="table table-hover">
+        <table class="table table-hover table-bordered">
+          
             <thead>
-            <tr>
               <th>ID</th>
               <th>DATA</th>
+              <th>DESCRIÇÃO</th>
               <th>VALOR</th>
-              <th>DESCRICAO</th>
+              </th>
             </tr>
           </thead>
           <tbody>
             {% for movimentacao in movimentacoes %}
-            <tr>
-              <td>ID</td>
+            {% if movimentacao.valor > 0 %}
+            <tr style="color: green;">
+              <td>{{ movimentacao.id }}</td>
               <td>{{ movimentacao.data_movimentacao }}</td>
-              <td>{{ movimentacao.valor }}</td>
-              <td>{{ movimentacao.descricao }}</td>
+              <td>{{ movimentacao.descricao }}</td>         
+              <td>R$ {{ movimentacao.valor|intcomma }}</td>
             </tr>
+              {% else %}
+              <tr style="color: red;">
+              <td>{{ movimentacao.id }}</td>
+              <td>{{ movimentacao.data_movimentacao }}</td>
+              <td>{{ movimentacao.descricao }}</td>         
+              <td>R$ {{ movimentacao.valor|intcomma }}</td>
+            </tr>
+            {% endif %}
+            {% endfor %}
           </tbody>
-          {% endfor %}
+          
         </table>        
       </div>      
       </body>
