@@ -1,6 +1,5 @@
 /* 
 Cor principal: #00afa9 (azul) Letra: white
-
 */
 
 * {
@@ -10,4 +9,19 @@ Cor principal: #00afa9 (azul) Letra: white
 
 .space {
     flex: 1 1 100px;
+}
+
+.btn-primary {
+    background-color: #00afa9;
+    font-weight: 600;
+}
+
+.btn-grande {
+    width: 80%;
+}
+
+h1.titulo {
+    text-align: center;
+    color: #00afa9;
+    margin: 50px 0;
 }
