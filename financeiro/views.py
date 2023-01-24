@@ -13,9 +13,19 @@ def CadastrarUsuario(request):
 
 
 def SalvarUsuario(request):
-    usuario = request.POST.get('usuario')
+    nome = request.POST.get('usuario')
     email = request.POST.get('email')
-    print(usuario)
+    senha = request.POST.get('senha')
+
+    usuario = Usuario()
+
+    usuario.nome = nome
+    usuario.senha = senha
+    usuario.email = email
+
+    usuario.save()
+
+    request.session['idUsuario'] = usuario.id
 
     return redirect("ListarMovimentacao")
 
