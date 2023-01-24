@@ -1,0 +1,49 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css/cadastroUsuario.css' %}">
+
+<h1 class="titulo">Cadastro</h1>
+
+<div class="blocoFormulario">
+    <form action="{% url 'SalvarUsuario' %}" method="POST">
+
+        {% csrf_token %}
+
+        <h3>Crie sua conta gratuitamente</h3>
+        <div class="form-group">
+            <label for="usuario">Usuário</label>
+            <input type="text" class="form-control" id="usuario" name="usuario" placeholder="Usuário" minlength="4"
+                required>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
+        </div>
+
+        <div class="form-group">
+            <label for="senha">Senha</label>
+            <input type="password" class="form-control" id="senha" name="senha" placeholder="******" minlength="8"
+                maxlength="20" required>
+            <small class="text-muted">
+                Deve ter entre 8 e 20 caracteres.
+            </small>
+        </div>
+
+        <div class="form-group">
+            <label for="confirmarSenha">Confirme sua senha</label>
+            <input type="password" class="form-control" id="confirmarSenha" name="ConfirmarSenha" placeholder="******"
+                minlength="6" required>
+        </div>
+
+        <div class="acoes">
+            <button type="submit" class="btn btn-primary btn-grande">Cadastrar</button>
+            <a href="">Cancelar</a>
+        </div>
+    </form>
+</div>
+
+{% endblock %}
