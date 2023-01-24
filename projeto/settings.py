@@ -20,13 +20,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-<<<<<<< HEAD
     'django.contrib.humanize',
-    'financeiro',
-    
-=======
     'financeiro.apps.FinanceiroConfig',
->>>>>>> main
 ]
 
 MIDDLEWARE = [

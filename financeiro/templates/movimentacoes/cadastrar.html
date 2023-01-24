@@ -2,47 +2,44 @@
 {% load static %}
 
 {% block content %}
-<body>
-  <h1 class="titulo">Cadastrar Movimentações</h1>
-<br>
- 
-<div>
-  <div class="section">
-    <div class="row">
-        <form class="col s12" action='{% url "Cadastrar movimentações" %}' method='post'>
-            {% csrf_token %}
 
-            <div class="row">
-                <div class="container center">
-                    <br>
-                    <br>
-                    <div class="input-field col s3">
-                      <label for='descricao'>Descrição</label>
-                        <input placeholder="descricao" name="descricao" id='descricao' type='text' class='validate'>
-                        
-                    </div>
-                    <div class="input-field col s3">
-                      <label for='valor'>Valor</label>
-                        <input placeholder='Valor' name='valor' id='valor' type='text' class='validate'>
-                        
-                    </div>
-                    <div class="input-field col s3">
-                      <label for="data_movimentacao">Data da Movimentacao</label>
-                        <input placeholder='Data da Movimentacao' name="data_movimentacao" id="data_movimentacao" type="text" class='datepicker'>
-                        
-                    </div>
-                    <button class="btn waves-effect waves-light" type="submit" name="action">Adicionar movimentação
-                        <i class="material-icons right">add_circle</i>
-                    </button>
-                </div>
-            </div>
-        </form>
-    </div>
+<link rel="stylesheet" href="{% static 'css/cadastroUsuario.css' %}">
+
+<h1 class="titulo">Cadastro de Movimentações</h1>
+
+<div class="blocoFormulario">
+    <form action="{% url 'CadastrarMovimentacao' %}" method="POST">
+
+        {% csrf_token %}
+
+        <h3>Cadastre sua movimentação</h3>
+        <div class="form-group">
+            <label for="data">Data</label>
+            <input type="text" class="form-control" id="data_movimentacao" name="data_movimentacao" placeholder="Data da Movimentação">
+        </div>
+
+        <div class="form-group">
+            <label for="valor">Valor</label>
+            <input type="value" class="form-control" id="valor" name="valor" placeholder="Valor">
+        </div>
+
+        <div class="form-group">
+            <label for="descricao">Descrição</label>
+            <input type="text" class="form-control" id="descricao" name="descricao" placeholder="Descrição">
+        </div>
+
+        <div class="form-group">
+            <label for="idUsuario">Usuário</label>
+            <input type="text" class="form-control" id="idUsuario" name="idUsuario" placeholder="Usuário">
+        </div>
+
+        </div>
+
+        <div class="acoes">
+            <button type="submit" class="btn btn-primary btn-grande">Cadastrar</button>
+            <a href="">Cancelar</a>
+        </div>
+    </form>
 </div>
 
-
-      </body>
-    {% endblock %}
-      </html>
-</body>
-</html>
+{% endblock %}
