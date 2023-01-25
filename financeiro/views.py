@@ -35,4 +35,20 @@ def ListarMovimentacao(request):
     conteudo = {
         'movimentacoes': movimentacoes
     }
-    return render(request, 'movimentacoes/listar.html', conteudo)
+    return render(request,'movimentacoes/listar.html', conteudo)
+
+def CadastrarMovimentacao(request):    
+    usuario = request.session['idUsuario']
+    data_movimentacao = request.POST.get('data_movimentacao')
+    valor = request.POST.get('valor')
+    descricao = request.POST.get('descricao')
+    
+    movimentacao = Movimentacao()
+
+    movimentacao.usuario = usuario
+    movimentacao.data_movimentacao = data_movimentacao
+    movimentacao.valor = valor
+    movimentacao.descricao = descricao
+    movimentacao.save()
+
+    return redirect("ListarMovimentacao")
