@@ -1,5 +1,38 @@
 {% extends 'index.html' %}
 {% load static %}
+
 {% block content %}
 
-{% endblock content %}
+<link rel="stylesheet" href="{% static 'css/cadastroUsuario.css' %}">
+
+<h1 class="titulo">Cadastro de Movimentações</h1>
+
+<div class="blocoFormulario">
+    <form action="{% url 'CadastrarMovimentacao' %}" method="POST">
+
+        {% csrf_token %}
+
+        <h3>Cadastre sua movimentação</h3>
+        <div class="form-group">
+            <label for="data">Data</label>
+            <input type="date" class="form-control" id="data_movimentacao" name="data_movimentacao" placeholder="Data da Movimentação">
+        </div>
+
+        <div class="form-group">
+            <label for="valor">Valor</label>
+            <input type="value" class="form-control" id="valor" name="valor" placeholder="Valor">
+        </div>
+
+        <div class="form-group">
+            <label for="descricao">Descrição</label>
+            <input type="text" class="form-control" id="descricao" name="descricao" placeholder="Descrição">
+        </div>
+
+        <div class="acoes">
+            <button type="submit" class="btn btn-primary btn-grande">Cadastrar</button>
+            <a href="{% url 'ListarMovimentacao' %}%">Cancelar</a>
+        </div>
+    </form>
+</div>
+
+{% endblock %}

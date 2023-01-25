@@ -7,12 +7,12 @@
     </div>
     <nav class="nav">
         <a class="nav-link" href="#">Início</a>
-        <a class="nav-link" href="#">Movimentações</a>
-        <a class="nav-link" href="#">Perfil</a>
+        <a class="nav-link" href="{% url 'ListarMovimentacao' %}">Movimentações</a>
+        <a class="nav-link" href="{% url 'ChamarTelaCadastrarMovimentacao' %}">Cadastrar</a>
     </nav>
     <span class="space"></span>
     <div class="usuario">
         <h4> Nome do usuario</h4>
-        <button class="btn btn-secondary">Sair</button>
+        <button class="btn btn-secondary"><a href="{% url 'Logout' %}">Sair</a></button>
     </div>
 </header>
