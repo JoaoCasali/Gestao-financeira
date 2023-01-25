@@ -16,6 +16,10 @@ header.header {
     color: white;
 }
 
+.nav .nav-link:hover {
+    opacity: 0.8;
+}
+
 .header .usuario {
     width: 20%;
     display: flex;
@@ -30,4 +34,16 @@ header.header {
 .header .usuario button {
     width: 30%;
     height: 40px;
+}
+
+.header .usuario button a {
+    color: white;
+}
+
+.header .usuario button a:visited {
+    color: white;
+}
+
+.header .usuario button a:hover {
+    text-decoration: none;
 }
